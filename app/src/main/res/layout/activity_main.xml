@@ -67,7 +67,7 @@
         android:layout_marginTop="44dp"
         android:gravity="center"
         android:singleLine="false"
-        android:text="Find a team in your city & dominate the league"
+        android:text="Find a team in your city and dominate the league"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
