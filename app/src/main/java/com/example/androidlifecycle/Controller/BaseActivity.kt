@@ -1,4 +1,4 @@
-package com.example.androidlifecycle
+package com.example.androidlifecycle.Controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
