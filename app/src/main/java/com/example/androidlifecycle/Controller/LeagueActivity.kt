@@ -4,19 +4,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.androidlifecycle.Utilities.EXTRA_LEAGUE
 import com.example.androidlifecycle.R
+import com.example.androidlifecycle.Utilities.EXTRA_PLAYER
+import com.example.androidlifecycle.model.Player
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    var player = Player("", "")
 
     fun leagueNextClicked(view: View) {
 
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
 
         } else {
@@ -31,7 +32,7 @@ class LeagueActivity : BaseActivity() {
         womensLeagueButton.isChecked = false
         coedLeagueButton.isChecked = false
 
-        selectedLeague = "mens"
+        player.league = "mens"
     }
 
     fun onWomensClicked(view: View) {
@@ -39,7 +40,7 @@ class LeagueActivity : BaseActivity() {
         mensLeagueButton.isChecked = false
         coedLeagueButton.isChecked = false
 
-        selectedLeague = "womens"
+        player.league = "womens"
 
     }
 
@@ -48,7 +49,7 @@ class LeagueActivity : BaseActivity() {
         mensLeagueButton.isChecked = false
         womensLeagueButton.isChecked = false
 
-        selectedLeague = "Co-ed"
+        player.league = "Co-ed"
     }
 
 

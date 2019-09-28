@@ -3,8 +3,8 @@ package com.example.androidlifecycle.Controller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidlifecycle.R
-import com.example.androidlifecycle.Utilities.EXTRA_LEAGUE
-import com.example.androidlifecycle.Utilities.EXTRA_SKILL
+import com.example.androidlifecycle.Utilities.EXTRA_PLAYER
+import com.example.androidlifecycle.model.Player
 import kotlinx.android.synthetic.main.activity_finish.*
 
 class FinishActivity : AppCompatActivity() {
@@ -13,10 +13,9 @@ class FinishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
 
-        val league = intent.getStringExtra(EXTRA_LEAGUE)
-        val skill = intent.getStringExtra(EXTRA_SKILL)
+        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
 
-        searchLeagueText.text = "Looking for $league $skill league near you"
+        searchLeagueText.text = "Looking for ${player.league} ${player.league} league near you"
 
     }
 }
